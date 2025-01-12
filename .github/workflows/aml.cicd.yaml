@@ -27,5 +27,6 @@ jobs:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/aml-authoring-tool:${{ github.ref_name }}
           build-args: |
-            VITE_REACT_APP_ENV=develop
-            VITE_SENTRY_DSN=${{ secrets.SENTRY_DSN }}
+            APP_ENV=develop
+            BE_BASE_URL=${{ vars.BE_BASE_URL }}
+
