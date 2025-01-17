@@ -105,6 +105,7 @@ const QuestionSetListing = () => {
         accessorKey: 'questions',
         header: 'Questions Count',
         cell: (info) => (info.getValue() as QuestionSet['questions']).length,
+        enableSorting: false,
       },
       {
         accessorKey: 'sequence',
@@ -126,6 +127,7 @@ const QuestionSetListing = () => {
                 .join(', ')
             : '--',
         cellClassName: 'max-w-80 truncate',
+        enableSorting: false,
       },
       {
         accessorKey: 'purpose',
@@ -184,7 +186,7 @@ const QuestionSetListing = () => {
   const tableInstance = useTable({
     columns,
     rows: questionSets,
-    enableSorting: false,
+    enableSorting: true,
   });
 
   return (

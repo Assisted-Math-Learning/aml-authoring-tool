@@ -99,6 +99,7 @@ const QuestionsListing: React.FC<QuestionsListingProps> = ({
           toReadableFormat(
             (info.getValue() as Question['taxonomy'])?.class?.name?.en
           ),
+        enableSorting: false,
       },
       {
         accessorKey: 'operation',
@@ -141,6 +142,7 @@ const QuestionsListing: React.FC<QuestionsListingProps> = ({
             : `${usersMap?.[info.getValue() as string]?.first_name} ${
                 usersMap?.[info.getValue() as string]?.last_name
               }`) as Question['created_by'],
+        enableSorting: false,
       },
       {
         accessorKey: 'created_at',
@@ -234,7 +236,7 @@ const QuestionsListing: React.FC<QuestionsListingProps> = ({
   const tableInstance = useTable({
     columns,
     rows: questions,
-    enableSorting: false,
+    enableSorting: true,
   });
 
   return (
